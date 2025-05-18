@@ -47,6 +47,7 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=development
+      - NEXTAUTH_URL=http://localhost:3000
     volumes:
       - ./next-app:/app
       - /app/node_modules

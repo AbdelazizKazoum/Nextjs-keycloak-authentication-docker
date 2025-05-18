@@ -1,9 +1,17 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  basePath: process.env.BASEPATH,
+  redirects: async () => {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+        permanent: true,
+        locale: false
+      }
+    ]
+  }
+}
 
-  output: "standalone",
-};
-
-export default nextConfig;
+export default nextConfig
